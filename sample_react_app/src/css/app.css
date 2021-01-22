@@ -1,0 +1,22 @@
+/* @import "node_modules/bulma/bulma.sass"; */
+
+/* System specific styling */
+.notif-hide {
+    display: none;
+}
+
+.mx-timesheet-header {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.mx-timesheet-header.week_dates {
+    font-size: 0.75em;
+}
+
+
+/* overrides */
+ul.dropdown-menu.rbt-menu {
+    background: white !important;
+    border: 1px solid silver !important;
+}
