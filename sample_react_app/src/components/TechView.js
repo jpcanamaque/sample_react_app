@@ -82,6 +82,9 @@ class TechView extends React.Component {
 
         callback();
 
+        // This part is intentionally commented to prevent error 
+        // since this is service-derived functionality
+
         // const date = formatJSDate(Date.now());
         // const jsonrpc_url = this.props.params.JsonRpcServer;
         
