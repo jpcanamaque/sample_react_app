@@ -10,13 +10,6 @@ class TimesheetWeekDates extends Component {
                         return <th className = "mx-timesheet-header week_dates" key = {i}>{date}</th>
                     })
                 }
-                {/* <td className = "mx-timesheet-header">1</td>
-                <td className = "mx-timesheet-header">2</td>
-                <td className = "mx-timesheet-header">3</td>
-                <td className = "mx-timesheet-header">4</td>
-                <td className = "mx-timesheet-header">5</td>
-                <td className = "mx-timesheet-header">6</td>
-                <td className = "mx-timesheet-header">7</td> */}
             </tr>
         );
     }

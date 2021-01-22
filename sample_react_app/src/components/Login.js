@@ -1,12 +1,10 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import JsonRpc from 'jsonrpc-client';
 import PropType from 'prop-types';
 
 import { showNotification } from '../helpers/helper'; 
 
 import logo from '../img/logo.png'
-// import Notification from './Notification';
 
 class Login extends React.Component {
     constructor () {
@@ -17,7 +15,6 @@ class Login extends React.Component {
     }
     
     componentDidMount () {
-        console.log(this)
         const params = this.props.params;
         if(params.hasLoggedIn) {
             this.props.history.push('/main');
@@ -113,6 +110,14 @@ class Login extends React.Component {
         
         if(username === '' || password === '') {
             showNotification('is-danger', ' message');
+        } else if (username === "test" && password === "test") {
+            params.userDetails = {} 
+            params.hasLoggedIn = true;
+            params.user_loggedIn = username.toLowerCase();
+            params.userDetails.struserroledesc = "TECHNICIAN";
+
+            mainState_init(params);
+            this.props.history.push(`/main`);
         } else {
             const login_btn = document.querySelector('#sso-login-btn');
             
@@ -138,6 +143,7 @@ class Login extends React.Component {
                             showNotification('is-danger', message);
                         }
                     } else {
+                        login_btn.classList.remove('is-loading');
                         showNotification('is-danger', ' Unable to login.');
                     }
                 }

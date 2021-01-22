@@ -1,15 +1,10 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-// import JsonRpc from 'jsonrpc-client';
 import PropType from 'prop-types';
 
 import Header from './Header';
 
 import TechView from './TechView';
-// import SprvsrView from './SprvsrView';
 import AuthUserView from './AuthUserView';
-
-// import { showNotification, formatJSDate } from '../helpers/helper'; 
 
 class App extends React.Component {
     constructor (props) {

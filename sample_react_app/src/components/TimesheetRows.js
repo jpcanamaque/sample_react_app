@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
 import {AsyncTypeahead} from 'react-bootstrap-typeahead';
 
-// import Autocomplete from 'react-autocomplete';
-
 import { AppConstants } from '../helpers/helper';
 import { SelectOptionBuilder } from '../helpers/component-helper';
-
-
-// function logChange(val) {
-//   console.log("Selected: " + JSON.stringify(val));
-// }
-
-// var options = [
-//   { value: 'one', label: 'One' },
-//   { value: 'two', label: 'Two' }
-// ];
 
 class TimesheetRows extends Component {
     constructor () {

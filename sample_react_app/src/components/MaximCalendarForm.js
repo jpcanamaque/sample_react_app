@@ -1,8 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import JsonRpc from 'jsonrpc-client';
-
-import { formatJSDate } from '../helpers/helper';
 import { SelectOptionBuilder } from '../helpers/component-helper';
 
 class MaximCalendarForm extends React.Component {

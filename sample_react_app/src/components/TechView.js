@@ -1,12 +1,10 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import JsonRpc from 'jsonrpc-client';
-// import PropType from 'prop-types';
 
 import Timesheet from './Timesheet';
 import MaximCalendarForm from './MaximCalendarForm';
 
-import { formatJSDate, /* AppConstants */ } from '../helpers/helper'; 
+import { formatJSDate } from '../helpers/helper'; 
 
 class TechView extends React.Component {
     constructor() {
@@ -38,8 +36,6 @@ class TechView extends React.Component {
         });
         this.getAllTaskOptions();
         this.getTesterDetails();
-        // this.getDietypeLookup();
-        // this.getWorkweekDates();
     }
 
     getWorkweekDates () {
@@ -76,23 +72,34 @@ class TechView extends React.Component {
     }
     
     getMaximCalendar (callback) {
-        const date = formatJSDate(Date.now());
-        const jsonrpc_url = this.props.params.JsonRpcServer;
-        
-        let client = JsonRpc.create(jsonrpc_url);
-        client.call('ovt_getMaximCalendar', {calendardate: date},
-            (e,r) => {
-               this.setState(r);
-               this.setState({
-                selected_period : {
-                    transyear: r.current_date.CALENDARYEAR,
-                    transqtr: r.current_date.QUARTER,
-                    transww: r.current_date.WEEK_NUMBER
-                 }
-               })
+        this.setState({
+            selected_period : {
+                transyear: 2021,
+                transqtr: 3,
+                transww: 28
+             }
+        })
 
-               callback();
-            });
+        callback();
+
+        // const date = formatJSDate(Date.now());
+        // const jsonrpc_url = this.props.params.JsonRpcServer;
+        
+        // let client = JsonRpc.create(jsonrpc_url);
+        // client.call('ovt_getMaximCalendar', {calendardate: date},
+        //     (e,r) => {
+                
+        //        this.setState(r);
+        //        this.setState({
+        //         selected_period : {
+        //             transyear: r.current_date.CALENDARYEAR,
+        //             transqtr: r.current_date.QUARTER,
+        //             transww: r.current_date.WEEK_NUMBER
+        //          }
+        //        })
+
+        //        callback();
+        //     });
     }
 
     getAllTaskOptions () {

@@ -9,7 +9,6 @@ import './css/app.css';
 import App from './components/App';
 import NotLoggedIn from './components/NotLoggedIn';
 import Login from './components/Login';
-// import Notification from './components/Notification';
 
 function withProps(Component, props) {
   return function(matchProps) {
@@ -25,7 +24,7 @@ class Root extends React.Component {
         document.cookie  = (document.cookie === "" || typeof JSON.parse(document.cookie) !== 'object')  ? false : document.cookie
         
         this.state = JSON.parse(document.cookie) || {
-            JsonRpcServer : "http://cav-d-adonela02/json-rpc/json-rpc.php",
+            JsonRpcServer : "http://example.com/json-rpc/json-rpc.php",
             hasLoggedIn : false,
             user_loggedIn : null
         };
